@@ -85,15 +85,15 @@ public class 괄호변환 {
     }
 
     private static String reverse(String u) {
-        StringBuilder _string_Builder = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         for (char brace : u.toCharArray()) {
             if (brace == '(') {
-                _string_Builder.append(")");
+                stringBuilder.append(")");
             } else {
-                _string_Builder.append("(");
+                stringBuilder.append("(");
             }
         }
 
-        return _string_Builder.toString();
+        return stringBuilder.toString();
     }
 }
