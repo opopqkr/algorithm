@@ -105,7 +105,7 @@ public class 트리 {
                 // 2-2. 중위 순회 배열에서 root 노드 기준으로 오른쪽이 오른쪽 노드.
                 // ex) 전위 순회 배열 [ 3 6 5 4 8 7 1 2 ]
                 //     중위 순회 배열 [ 5 6 8 4 3 1 2 7 ]
-                //     root 노드가 3일 경우, 왼쪽 노드는 [ 1 2 7 ]
+                //     root 노드가 3일 경우, 오른쪽 노드는 [ 1 2 7 ]
                 int[] rightInorder = Arrays.copyOfRange(inorder, i + 1, inorder.length);
                 node.right = addNode(index + i + 1, preorder, rightInorder, N);
             }
