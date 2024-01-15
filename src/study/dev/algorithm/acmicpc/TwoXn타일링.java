@@ -15,8 +15,8 @@ public class TwoXn타일링 {
      * 9
      */
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
 
         System.out.println(solution(n));
     }
