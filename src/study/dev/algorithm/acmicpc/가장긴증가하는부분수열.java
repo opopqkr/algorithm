@@ -6,12 +6,18 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
+/**
+ * LIS(Longest Increasing Subsequence, 최장 증가 부분 수열) 유형
+ * DP = O(n^2)
+ * Binary Search = O(n log n)
+ */
 public class 가장긴증가하는부분수열 {
 
     /**
      * INPUT
-     * <p>6
-     * * 10 20 10 30 20 50
+     * <p>
+     * 6
+     * 10 20 10 30 20 50
      */
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
