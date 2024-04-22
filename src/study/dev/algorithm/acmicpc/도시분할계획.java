@@ -41,10 +41,10 @@ public class 도시분할계획 {
 
         for (int i = 0; i < M; i++) {
             temp = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-            int a = temp[0], b = temp[1], c = temp[2];
+            int start = temp[0], end = temp[1], cost = temp[2];
 
-            graph.get(a).add(new Edge(b, c));
-            graph.get(b).add(new Edge(a, c));
+            graph.get(start).add(new Edge(end, cost));
+            graph.get(end).add(new Edge(start, cost));
         }
 
         System.out.println(solutionWithPrimAlgorithm());
@@ -74,14 +74,14 @@ public class 도시분할계획 {
         while (!pq.isEmpty()) {
             Edge current = pq.poll();
 
-            if (visited[current.v]) continue;
+            if (visited[current.vertex]) continue;
 
-            visited[current.v] = true;
-            answer += current.c;
-            maxCost = Math.max(maxCost, current.c);
+            visited[current.vertex] = true;
+            answer += current.cost;
+            maxCost = Math.max(maxCost, current.cost);
 
-            for (Edge next : graph.get(current.v)) {
-                if (!visited[next.v]) {
+            for (Edge next : graph.get(current.vertex)) {
+                if (!visited[next.vertex]) {
                     pq.offer(next);
                 }
             }
@@ -95,16 +95,16 @@ public class 도시분할계획 {
     private static ArrayList<ArrayList<Edge>> graph;
 
     private static class Edge implements Comparable<Edge> {
-        int v, c;
+        int vertex, cost;
 
-        public Edge(int v, int c) {
-            this.v = v;
-            this.c = c;
+        public Edge(int vertex, int cost) {
+            this.vertex = vertex;
+            this.cost = cost;
         }
 
         @Override
         public int compareTo(Edge o) {
-            return this.c - o.c;
+            return this.cost - o.cost;
         }
     }
 }
