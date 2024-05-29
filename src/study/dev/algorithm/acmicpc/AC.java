@@ -32,6 +32,7 @@ public class AC {
         int T = Integer.parseInt(br.readLine());
 
         StringTokenizer st;
+        Deque<Integer> deque;
         while (T-- > 0) {
             String temp = br.readLine();
             int n = Integer.parseInt(br.readLine());
@@ -40,14 +41,12 @@ public class AC {
             while (st.hasMoreElements())
                 deque.add(Integer.parseInt(st.nextToken()));
 
-            System.out.println(solution(temp.toCharArray(), n, deque));
+            System.out.println(solution(temp.toCharArray(), deque));
         }
 
     }
 
-    private static Deque<Integer> deque;
-
-    private static String solution(char[] functions, int n, Deque<Integer> array) {
+    private static String solution(char[] functions, Deque<Integer> array) {
         boolean isReverse = false;
         for (char function : functions) {
             if (function == 'R') {
