@@ -60,4 +60,5 @@ public class 좋다 {
     private static int N;
 
     private static int[] inputs;
+
 }
